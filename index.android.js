@@ -4,4 +4,4 @@ import SearchTime from './app/components/SearchTime'
 class SearchTimeAndroid extends SearchTime {
 }
 
-AppRegistry.registerComponent('SearchTime', () => SearchTimeAndroid);
+AppRegistry.registerComponent('searchtime', () => SearchTimeAndroid);
