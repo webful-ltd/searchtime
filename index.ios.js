@@ -4,4 +4,4 @@ import SearchTime from './app/components/SearchTime'
 class SearchTimeIos extends SearchTime {
 }
 
-AppRegistry.registerComponent('SearchTime', () => SearchTimeIos);
+AppRegistry.registerComponent('searchtime', () => SearchTimeIos);
