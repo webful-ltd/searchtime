@@ -6,11 +6,19 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "eslintConfig": {
+    "plugins": [
+      "react",
+      "react-native"
+    ],
     "parserOptions": {
       "ecmaVersion": 6,
       "ecmaFeatures": {
         "jsx": true
-      }
+      },
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-extra-semi": 2
     }
   },
   "dependencies": {
@@ -21,6 +29,7 @@
   },
   "devDependencies": {
     "eslint": "^3.9.0",
-    "eslint-plugin-react": "^6.4.1"
+    "eslint-plugin-react": "^6.4.1",
+    "eslint-plugin-react-native": "^2.0.0"
   }
 }

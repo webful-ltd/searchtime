@@ -11,17 +11,19 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  TouchableOpacity,
   View
 } from 'react-native';
 import Button from 'react-native-button';
 import DatePicker from 'react-native-datepicker'
 
 class SearchTime extends Component {
-  state = {
-    searchQuery: 'asdf',
-    startDate: '2016-09-07',
-    endDate: '2016-09-16',
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchQuery: 'asdf',
+      startDate: '2016-09-07',
+      endDate: '2016-09-16',
+    }
   }
 
   doSearch() {
@@ -33,9 +35,9 @@ class SearchTime extends Component {
     var url = 'https://www.google.com/search?q=' +
       this.state.searchQuery +
       '&tbs=cdr%3A1%2Ccd_min%3A' +
-      this.prepareDatePiece(this.state.startDate) +
+      SearchTime.prepareDatePiece(this.state.startDate) +
       '%2Ccd_max%3A' +
-      this.prepareDatePiece(this.state.endDate);
+      SearchTime.prepareDatePiece(this.state.endDate);
 
     console.log(url)
 
@@ -45,7 +47,7 @@ class SearchTime extends Component {
   /**
    * @param {string} piece
    */
-  prepareDatePiece(piece) {
+  static prepareDatePiece(piece) {
     return piece.replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, '$3%2F$2%2F$1')
   }
 
