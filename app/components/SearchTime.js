@@ -10,20 +10,29 @@ import Button from 'react-native-button';
 import DatePicker from 'react-native-datepicker'
 
 export default class SearchTime extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      searchQuery: 'asdf',
+      searchQuery: '',
       startDate: '2016-09-07',
       endDate: '2016-09-16',
     }
   }
 
+  /**
+   * Opens a Google link based on the current state.
+   */
   doSearch() {
     Linking.openURL(this.makeUrl())
       .catch(err => console.error('An error occurred', err));
   }
 
+  /**
+   * Creates a Google URL from the current state.
+   *
+   * @returns {string}
+   */
   makeUrl() {
     return 'https://www.google.com/search?q=' +
       this.state.searchQuery +
@@ -34,7 +43,10 @@ export default class SearchTime extends Component {
   }
 
   /**
+   * Turns a YYYY-MM-DD date string into a URL-ready D-M-Y snippet.
+   * 
    * @param {string} piece
+   * @returns {string}
    */
   static prepareDatePiece(piece) {
     return piece.replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, '$3%2F$2%2F$1')
@@ -76,6 +88,7 @@ export default class SearchTime extends Component {
       </View>
     );
   }
+
 }
 
 const styles = StyleSheet.create({
