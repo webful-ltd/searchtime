@@ -35,7 +35,7 @@ export default class SearchTime extends Component {
    */
   makeUrl() {
     return 'https://www.google.com/search?q=' +
-      this.state.searchQuery +
+      encodeURIComponent(this.state.searchQuery) +
       '&tbs=cdr%3A1%2Ccd_min%3A' +
       SearchTime.prepareDatePiece(this.state.startDate) +
       '%2Ccd_max%3A' +
