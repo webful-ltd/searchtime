@@ -4,9 +4,10 @@
  * @flow
  */
 
-import React, {
+import React, {Component} from 'react';
+import {
   AppRegistry,
-  Component,
+  Linking,
   StyleSheet,
   Text,
   View
@@ -14,6 +15,9 @@ import React, {
 
 class SearchTime extends Component {
   render() {
+    Linking.openURL('http://www.google.com')
+      .catch(err => console.error('An error occurred', err));
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
