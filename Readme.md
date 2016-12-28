@@ -7,6 +7,10 @@ Issues
 ------
 [Tracked on GitHub](https://github.com/webful-ltd/searchtime/issues)
 
+Tests
+-----
+`npm test`
+
 Style checks
 ------------
 `npm run lint`
