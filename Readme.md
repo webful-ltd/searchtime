@@ -9,7 +9,8 @@ Issues
 
 Tests
 -----
-`npm test`
+* With style checks: `npm test`
+* Without: `npm run test-sans-lint`
 
 Style checks
 ------------

@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "mocha --compilers js:babel-register --recursive --bail --recursive tests/**/*.spec.js",
+    "test": "npm run lint && npm run test-sans-lint",
+    "test-sans-lint": "mocha --compilers js:babel-register --recursive --bail --recursive tests/**/*.spec.js",
     "lint": "eslint app --ext .js"
   },
   "eslintConfig": {
