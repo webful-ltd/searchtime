@@ -20,7 +20,8 @@
       "sourceType": "module"
     },
     "rules": {
-      "no-extra-semi": 2
+      "no-extra-semi": 2,
+      "react/jsx-filename-extension": 0
     }
   },
   "dependencies": {
