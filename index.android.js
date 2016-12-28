@@ -1,7 +1,4 @@
 import { AppRegistry } from 'react-native';
-import SearchTime from './app/components/SearchTime';
+import App from './app/containers/App';
 
-class SearchTimeAndroid extends SearchTime {
-}
-
-AppRegistry.registerComponent('searchtime', () => SearchTimeAndroid);
+AppRegistry.registerComponent('searchtime', () => App);
