@@ -1,8 +1,8 @@
-export const SET_DATE = 'SET_DATE';
+import * as types from './actionTypes';
 
-export function setDate(fieldName, newDate) {
+export default function setDate(fieldName, newDate) {
   return {
-    type: SET_DATE,
+    type: types.SET_DATE,
     fieldName,
     newDate,
   };

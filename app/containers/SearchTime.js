@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import Button from 'react-native-button';
-import DatePicker from 'react-native-datepicker';
+import DateField from '../components/DateField';
 
 const styles = StyleSheet.create({
   container: {
@@ -61,20 +61,10 @@ export default class SearchTime extends Component {
       <View style={styles.container}>
 
         <Text>From:</Text>
-        <DatePicker
-          confirmBtnText="OK"
-          cancelBtnText="Cancel"
-          date={this.state.startDate}
-          onDateChange={(date) => { this.setState({ startDate: date }); }}
-        />
+        <DateField name="startDate" currentDate={this.state.startDate} />
 
         <Text>To:</Text>
-        <DatePicker
-          confirmBtnText="OK"
-          cancelBtnText="Cancel"
-          date={this.state.endDate}
-          onDateChange={(date) => { this.setState({ endDate: date }); }}
-        />
+        <DateField name="endDate" currentDate={this.state.endDate} />
 
         <Text>Search:</Text>
         <TextInput
