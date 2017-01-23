@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {
   Linking,
   StyleSheet,
@@ -8,6 +10,7 @@ import {
 } from 'react-native';
 import Button from 'react-native-button';
 import DateField from '../components/DateField';
+import setDate from '../actions/dates';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,7 +20,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class SearchTime extends Component {
+class SearchTime extends Component {
 
   /**
    * Turns a YYYY-MM-DD date string into a URL-ready D-M-Y snippet.
@@ -33,10 +36,24 @@ export default class SearchTime extends Component {
     super(props);
     this.state = {
       searchQuery: '',
-      startDate: '2016-09-07',
-      endDate: '2016-09-16',
     };
   }
+
+  // const mapDispatchToProps = (dispatch) => {
+  //   return {
+  //     onDateChange: (id) => {
+  //       dispatch(toggleTodo(id))
+  //     }
+  //   }
+  // }
+
+  // const mapDispatchToProps = (dispatch) => {
+  //   return {
+  //     onTodoClick: (id) => {
+  //       dispatch(toggleTodo(id))
+  //     }
+  //   }
+  // }
 
   /**
    * Opens a Google link based on the current state.
@@ -61,10 +78,10 @@ export default class SearchTime extends Component {
       <View style={styles.container}>
 
         <Text>From:</Text>
-        <DateField name="startDate" currentDate={this.state.startDate} />
+        <DateField name="startDate" currentDate={this.props.startDate} />
 
         <Text>To:</Text>
-        <DateField name="endDate" currentDate={this.state.endDate} />
+        <DateField name="endDate" currentDate={this.props.endDate} />
 
         <Text>Search:</Text>
         <TextInput
@@ -85,3 +102,37 @@ export default class SearchTime extends Component {
   }
 
 }
+
+SearchTime.propTypes = {
+  startDate: PropTypes.string.isRequired,
+  endDate: PropTypes.string.isRequired,
+  // searchQuery: PropTypes.string.isRequired,
+};
+
+SearchTime.defaultProps = {
+  startDate: '2015-01-01',
+  endDate: '2015-01-02',
+};
+
+// todo replace this with something more sensible?
+const mapStateToProps = state => ({
+  startDate: state.startDate,
+  endDate: state.endDate,
+  searchQuery: state.searchQuery,
+});
+
+const boundActionCreators = bindActionCreators({
+  setDate,
+}, SearchTime.dispatch);
+
+console.log(boundActionCreators);
+
+// const mapDispatchToProps = (SearchTime.dispatch) => ({
+//   actions: boundActionCreators,
+// });
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(Object.assign({}, setDate), dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchTime);

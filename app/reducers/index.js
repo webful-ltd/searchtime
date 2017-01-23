@@ -1,6 +1,15 @@
+import { combineReducers } from 'redux';
+import dates from './dates';
 import search from './search';
 
 export {
-  // eslint-disable-next-line import/prefer-default-export
+  dates,
   search,
 };
+
+const searchtimeReducers = combineReducers({
+  dates,
+  search,
+});
+
+export default searchtimeReducers;
