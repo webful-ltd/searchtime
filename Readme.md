@@ -7,12 +7,14 @@ This React Native mobile app lets you search Google for results from a specific 
 
 Issues
 ------
-[Tracked on GitHub](https://github.com/webful-ltd/searchtime/issues)
+[Tracked on GitHub](https://github.com/webful-ltd/searchtime/issues).
 
 Tests
 -----
 * With style checks: `npm test`
 * Without: `npm run test-sans-lint`
+
+[Travis CI checks](https://travis-ci.org/webful-ltd/searchtime) require tests and linting rules to pass.
 
 Style checks
 ------------

@@ -1,16 +1,37 @@
 import expect from 'expect';
 import { describe, it } from 'mocha';
-import * as actions from '../../app/actions/dates';
+import * as types from '../../app/actions/actionTypes';
+import setDate from '../../app/actions/setDate';
+import setSearchQuery from '../../app/actions/setSearchQuery';
 
 describe('actions', () => {
-  it('should set a date correctly', () => {
+  it('should set start date correctly', () => {
     const expectedResult = {
-      type: actions.SET_DATE,
-      fieldName: 'testFieldName',
-      newDate: '2016-01-01',
+      type: types.SET_START_DATE,
+      newDate: '2016-05-05',
     };
 
-    expect(actions.setDate('testFieldName', '2016-01-01'))
+    expect(setDate('startDate', '2016-05-05'))
+      .toEqual(expectedResult);
+  });
+
+  it('should set end date correctly', () => {
+    const expectedResult = {
+      type: types.SET_END_DATE,
+      newDate: '2016-07-07',
+    };
+
+    expect(setDate('endDate', '2016-07-07'))
+      .toEqual(expectedResult);
+  });
+
+  it('should set search query correctly', () => {
+    const expectedResult = {
+      type: types.SET_SEARCH_QUERY,
+      searchQuery: 'my search!',
+    };
+
+    expect(setSearchQuery('my search!'))
       .toEqual(expectedResult);
   });
 });
