@@ -87,8 +87,13 @@ class SearchTime extends Component
 }
 
 SearchTime.propTypes = {
-  dates: PropTypes.object.isRequired,
-  search: PropTypes.object.isRequired,
+  dates: PropTypes.shape({
+    start: PropTypes.string.isRequired,
+    end: PropTypes.string.isRequired,
+  }).isRequired,
+  search: PropTypes.shape({
+    query: PropTypes.string.isRequired,
+  }).isRequired,
   setDate: PropTypes.func.isRequired,
   setSearchQuery: PropTypes.func.isRequired,
 };

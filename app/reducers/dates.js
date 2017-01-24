@@ -6,22 +6,13 @@ const initialState = {
 };
 
 const dates = (state = initialState, action) => {
-  console.log('state was: ', state);
   switch (action.type) {
     case types.SET_START_DATE:
-      console.log('in setStartDate reducer');
-      console.log('TYPE ', action.type);
-      console.log('action', action);
-
       return Object.assign({}, state, {
         start: action.newDate,
       });
 
     case types.SET_END_DATE:
-      console.log('in setEndDate reducer');
-      console.log('TYPE ', action.type);
-      console.log('action', action);
-
       return Object.assign({}, state, {
         end: action.newDate,
       });

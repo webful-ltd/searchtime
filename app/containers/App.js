@@ -6,8 +6,6 @@ import searchtimeReducers from '../reducers/index';
 
 const store = createStore(searchtimeReducers);
 
-console.log(store.getState());
-
 const App = () => (
   <Provider store={store}>
     <SearchTime />
