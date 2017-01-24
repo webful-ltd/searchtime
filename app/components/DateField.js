@@ -1,19 +1,18 @@
 import React, { PropTypes } from 'react';
 import DatePicker from 'react-native-datepicker';
-import setDate from '../actions/dates';
 
-const DateField = ({ name, currentDate }) => (
+const DateField = ({ onChange, currentDate }) => (
   <DatePicker
     confirmBtnText="OK"
     cancelBtnText="Cancel"
     date={currentDate}
-    onDateChange={(newDate) => { setDate(name, newDate); }}
+    onDateChange={onChange}
   />
 );
 
 DateField.propTypes = {
-  name: PropTypes.string.isRequired,
   currentDate: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default DateField;
