@@ -91,9 +91,17 @@ android {
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
-        versionName "1.0"
+        versionName "0.0.1"
         ndk {
             abiFilters "armeabi-v7a", "x86"
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file(SEARCHTIME_RELEASE_STORE_FILE)
+            storePassword SEARCHTIME_RELEASE_STORE_PASSWORD
+            keyAlias SEARCHTIME_RELEASE_KEY_ALIAS
+            keyPassword SEARCHTIME_RELEASE_KEY_PASSWORD
         }
     }
     splits {
@@ -105,9 +113,15 @@ android {
         }
     }
     buildTypes {
+        debug {
+            // https://github.com/facebook/react-native/issues/5886#issuecomment-230569276
+            manifestPlaceholders = [permissionName: "android.permission.ACCESS_FINE_LOCATION"]
+        }
         release {
+            manifestPlaceholders = [permissionName: "android.permission.SYSTEM_ALERT_WINDOW"]
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
         }
     }
     // applicationVariants are e.g. debug, release
