@@ -1,5 +1,3 @@
-import expect from 'expect';
-import { describe, it } from 'mocha';
 import * as types from '../../app/actions/actionTypes';
 import setDate from '../../app/actions/setDate';
 import setSearchQuery from '../../app/actions/setSearchQuery';
