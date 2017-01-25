@@ -9,6 +9,11 @@ Issues
 ------
 [Tracked on GitHub](https://github.com/webful-ltd/searchtime/issues).
 
+Install
+-------
+With [Yarn](https://yarnpkg.com/en/docs/getting-started), run:
+* `yarn`
+
 Tests
 -----
 * With style checks: `npm test`
