@@ -1,4 +1,4 @@
-package com.searchtime;
+package uk.webful.searchtime;
 
 import android.app.Application;
 import android.util.Log;

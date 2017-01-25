@@ -14,13 +14,23 @@ Install
 With [Yarn](https://yarnpkg.com/en/docs/getting-started), run:
 * `yarn`
 
-Tests
------
+Run
+---
+* `react-native run-android`
+* `react-native run-ios`
+
+Test
+----
 * With style checks: `npm test`
 * Without: `npm run test-sans-lint`
 
 [Travis CI checks](https://travis-ci.org/webful-ltd/searchtime) require tests and linting rules to pass.
 
-Style checks
-------------
+### Check code style
 `npm run lint`
+
+Release
+-------
+### Android
+### iOS
+* `react-native run-ios --configuration Release`

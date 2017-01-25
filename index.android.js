@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
 import App from './app/containers/App';
 
-AppRegistry.registerComponent('searchtime', () => App);
+AppRegistry.registerComponent('SearchTime', () => App);
