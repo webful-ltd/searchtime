@@ -17,13 +17,13 @@ Run
 
 Test
 ----
-* With style checks: `npm test`
-* Without: `npm run test-sans-lint`
+* With style checks: `yarn test`
+* Without: `yarn test-sans-lint`
 
 [Travis CI checks](https://travis-ci.org/webful-ltd/searchtime) require tests and linting rules to pass.
 
 ### Check code style
-`npm run lint`
+`yarn lint`
 
 Release
 -------

@@ -6,7 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "npm run lint && npm run test-sans-lint",
     "test-sans-lint": "jest",
-    "lint": "eslint app __tests__ --ext .js"
+    "lint": "eslint app __tests__"
   },
   "eslintConfig": {
     "plugins": [
