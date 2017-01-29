@@ -36,10 +36,8 @@ Assuming [Gradle configured locally](https://facebook.github.io/react-native/doc
 * Upload `android/app/build/outputs/apk/app-release.apk` to [Google Play Developer Console](https://play.google.com/apps/publish/)
 
 ### iOS
-(Minimum required steps TBC...)
 * `react-native bundle --dev false --entry-file index.ios.js --bundle-output ios/main.jsbundle --platform ios`
-* but possibly also? `react-native run-ios --configuration Release`
-* Maybe make [this change?](http://stackoverflow.com/a/32989683/2803757)
+* `react-native run-ios --configuration Release`
 * Open project `./ios/SearchTime.xcodeproj` in Xcode
 * Set build device to Generic iOS Device
 * Go to Product > Archive
