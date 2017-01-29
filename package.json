@@ -6,7 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "npm run lint && npm run test-sans-lint",
     "test-sans-lint": "jest",
-    "lint": "eslint app __tests__ --ext .js"
+    "lint": "eslint app __tests__"
   },
   "eslintConfig": {
     "plugins": [
@@ -30,7 +30,7 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "react": "15.4.1",
+    "react": "15.4.2",
     "react-native": "0.39.2",
     "react-native-button": "1.7.1",
     "react-native-datepicker": "1.4.1",

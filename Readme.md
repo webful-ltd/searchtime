@@ -3,11 +3,7 @@ SearchTime
 
 [![Build Status](https://travis-ci.org/webful-ltd/searchtime.svg?branch=master)](https://travis-ci.org/webful-ltd/searchtime)
 
-This React Native mobile app lets you search Google for results from a specific time window, in a way that's not easily possible with the official search apps or mobile web site.
-
-Issues
-------
-[Tracked on GitHub](https://github.com/webful-ltd/searchtime/issues).
+This React Native ES6 mobile app lets you search Google for results from a specific time window, in a way that's not easily possible with the official search apps or mobile web site.
 
 Install
 -------
@@ -21,13 +17,13 @@ Run
 
 Test
 ----
-* With style checks: `npm test`
-* Without: `npm run test-sans-lint`
+* With style checks: `yarn test`
+* Without: `yarn test-sans-lint`
 
 [Travis CI checks](https://travis-ci.org/webful-ltd/searchtime) require tests and linting rules to pass.
 
 ### Check code style
-`npm run lint`
+`yarn lint`
 
 Release
 -------
@@ -49,3 +45,7 @@ Assuming [Gradle configured locally](https://facebook.github.io/react-native/doc
 * Go to Product > Archive
 * Go to Window > Organizer > Archives. Validate the created archive, and Upload to App Store.
 * Complete beta setup [on iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConnect.woa/ra/ng/app)
+
+Issues
+------
+[Tracked on GitHub](https://github.com/webful-ltd/searchtime/issues).

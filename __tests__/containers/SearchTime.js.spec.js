@@ -15,6 +15,7 @@ describe('<SearchTime />', () => {
     </Provider>).toJSON();
 
     expect(st.props.style.flex).toEqual(1);
+    expect(st.props.style.padding).toEqual(20);
     expect(st.children.length).toEqual(7);
 
     expect(st.children[0].type).toEqual('Text');
@@ -40,7 +41,7 @@ describe('<SearchTime />', () => {
     expect(st.children[6].type).toEqual('View');
     expect(st.children[6].props.accessible).toEqual(true);
     expect(st.children[6].props.style.height).toEqual(45);
-    expect(st.children[6].props.style.backgroundColor).toEqual('white');
+    expect(st.children[6].props.style.backgroundColor).toEqual('#ffffff');
     expect(st.children[6].children[0].type).toEqual('Text');
     expect(st.children[6].children[0].props.allowFontScaling).toEqual(true);
     expect(st.children[6].children[0].children[0]).toEqual('Search Google');
