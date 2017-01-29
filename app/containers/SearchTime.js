@@ -16,7 +16,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingTop: 20,
+    padding: 20,
+  },
+  textInput: {
+    height: 40,
+    borderColor: '#cccccc',
+    borderWidth: 1,
+  },
+  buttonContainer: {
+    marginTop: 10,
+    padding: 10,
+    height: 45,
+    overflow: 'hidden',
+    borderColor: '#cccccc',
+    borderWidth: 1,
+    backgroundColor: '#ffffff',
+  },
+  button: {
+    fontSize: 20,
+    color: '#0c00ff',
   },
 });
 
@@ -69,14 +87,14 @@ class SearchTime extends Component
 
         <Text>Search:</Text>
         <TextInput
-          style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+          style={styles.textInput}
           onChangeText={searchQuery => this.props.setSearchQuery(searchQuery)}
           value={this.props.search.query}
         />
 
         <Button
-          containerStyle={{ padding: 10, height: 45, overflow: 'hidden', borderRadius: 4, backgroundColor: 'white' }}
-          style={{ fontSize: 20, color: 'green' }}
+          containerStyle={styles.buttonContainer}
+          style={styles.button}
           onPress={() => this.doSearch()}
         >
           Search Google
