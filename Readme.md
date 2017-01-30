@@ -31,17 +31,18 @@ Release
 
 Assuming [Gradle configured locally](https://facebook.github.io/react-native/docs/signed-apk-android.html#setting-up-gradle-variables):
 
+* Update version code and name in `android/app/build.gradle`
 * `cd android && ./gradlew assembleRelease`
 * To test live build: `react-native run-android --variant=release`
 * Upload `android/app/build/outputs/apk/app-release.apk` to [Google Play Developer Console](https://play.google.com/apps/publish/)
 
 ### iOS
 * `react-native bundle --dev false --entry-file index.ios.js --bundle-output ios/main.jsbundle --platform ios`
+* Open project `./ios/SearchTime.xcodeproj` in Xcode & update version numbers
 * `react-native run-ios --configuration Release`
-* Open project `./ios/SearchTime.xcodeproj` in Xcode
-* Set build device to Generic iOS Device
+* In Xcode, Set build device to Generic iOS Device
 * Go to Product > Archive
-* Go to Window > Organizer > Archives. Validate the created archive, and Upload to App Store.
+* Go to Window > Organizer > Archives if not opened automatically. Validate the created archive, and Upload to App Store.
 * Complete beta setup [on iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConnect.woa/ra/ng/app)
 
 Issues
