@@ -57,7 +57,7 @@ class SearchTime extends Component
    */
   makeUrl() {
     return `https://www.google.com/search?q=${encodeURIComponent(this.props.search.query)}&tbs=cdr%3A1%2Ccd_min%3A` +
-      `${SearchTime.prepareDatePiece(this.props.dates.end)}%2Ccd_max%3A` +
+      `${SearchTime.prepareDatePiece(this.props.dates.start)}%2Ccd_max%3A` +
       `${SearchTime.prepareDatePiece(this.props.dates.end)}`;
   }
 
