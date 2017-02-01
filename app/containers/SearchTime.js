@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import Button from 'react-native-button';
+import store from 'react-native-simple-store';
 import DateField from '../components/DateField';
 import setDate from '../actions/setDate';
 import setSearchQuery from '../actions/setSearchQuery';
@@ -48,6 +49,18 @@ class SearchTime extends Component
    */
   static prepareDatePiece(piece) {
     return piece.replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, '$3%2F$2%2F$1');
+  }
+
+  componentWillMount() {
+    const st = this;
+    store.get('dates').then((dates) => {
+      if (dates === null) {
+        store.save('dates', { start: '2010-02-02', end: '2011-02-02' });
+      } else {
+        st.props.setDate('startDate', dates.start);
+        st.props.setDate('endDate', dates.end);
+      }
+    });
   }
 
   /**
