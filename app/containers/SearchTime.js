@@ -57,8 +57,8 @@ class SearchTime extends Component
       if (dates === null) {
         store.save('dates', { start: '2010-02-02', end: '2011-02-02' });
       } else {
-        setDate('startDate', dates.start || '2010-01-01');
-        setDate('endDate', dates.end || '2011-01-01');
+        st.props.setDate('startDate', dates.start);
+        st.props.setDate('endDate', dates.end);
       }
     }).catch((error) => {
       console.error(`No dates set: ${error.message}`);
