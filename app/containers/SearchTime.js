@@ -42,13 +42,13 @@ const styles = StyleSheet.create({
 class SearchTime extends Component
 {
   /**
-   * Turns a YYYY-MM-DD date string into a URL-ready D-M-Y snippet.
+   * Turns a YYYY-MM-DD date string into a URL-ready M-D-Y snippet.
    *
    * @param {string} piece
    * @returns {string}
    */
   static prepareDatePiece(piece) {
-    return piece.replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, '$3%2F$2%2F$1');
+    return piece.replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, '$2%2F$3%2F$1');
   }
 
   componentWillMount() {
