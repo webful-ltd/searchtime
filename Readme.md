@@ -33,7 +33,7 @@ Assuming [Gradle configured locally](https://facebook.github.io/react-native/doc
 
 * Update version code and name in `android/app/build.gradle`
 * `cd android && ./gradlew assembleRelease`
-* To test live build: `react-native run-android --variant=release`
+* To test live build: `react-native run-android --configuration=release`
 * Upload `android/app/build/outputs/apk/app-release.apk` to [Google Play Developer Console](https://play.google.com/apps/publish/)
 
 ### iOS
